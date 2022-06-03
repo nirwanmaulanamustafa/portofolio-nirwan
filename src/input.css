@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Cambria", sans-serif;
+}
+
+.mouse {
+  width: 25px;
+  height: 50px;
+  border-radius: 20px;
+  display: flex;
+  top: 25em;
+}
+.mouse-wheel {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: auto;
+  animation: move-wheel 1s linear infinite;
+}
+@keyframes move-wheel {
+  0% {
+    opacity: 1;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+}
+
+.navbar-fixed {
+  @apply fixed z-[9999] bg-white bg-opacity-70;
+  backdrop-filter: blur(2px);
+  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-line {
+  @apply w-[30px] h-[2px] my-2 block bg-dark;
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+.hamburger-animasi {
+  @apply transition duration-200 ease-in-out;
+}
+.besar {
+  top: 800em;
+}
+@media (min-width: 768px) {
+  .md\:top-sedang {
+    top: 26.2em;
+  }
+}
+@media (min-width: 1024px) {
+  .md\:top-sedang {
+    top: 35em;
+  }
+}
